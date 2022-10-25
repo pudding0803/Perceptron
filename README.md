@@ -15,19 +15,20 @@
 
 * 神經網路設計
     * Activation function 使用 Sigmoid 函數，以 0.5 為界線進行二元分割
-    * 符號：$j$ 為當層神經元，$i$ 為前一層神經元，$k$ 為後一層神經元
+    * 符號： $j$ 為當層神經元， $i$ 為前一層神經元， $k$ 為後一層神經元
     * Forward propagation
         * $v_j = \sum(w_{ji} \cdot y_i)$
         * $y_j = \frac{1}{1 + e^{-v_j}}$
     * Backward propagation
-        * 若神經元 j 在輸出層：$\delta_j = (d_j - O_j) \cdot O_j \cdot (1 - O_j)$
-        * 若神經元 j 在隱藏層：$\delta_j = y_j \cdot (1 - y_j) \cdot \sum(\delta_k \cdot w_{kj})$
+        * 若神經元 j 在輸出層： $\delta_j = (d_j - O_j) \cdot O_j \cdot (1 - O_j)$
+        * 若神經元 j 在隱藏層： $\delta_j = y_j \cdot (1 - y_j) \cdot \sum(\delta_k \cdot w_{kj})$
         * $w_{ji} \leftarrow w_{ji} + \eta \cdot \delta_j \cdot y_i$
 
 * 主要使用的函式庫：numpy、plotly、PyQt5
 
 * 輸入資料的格式範例：
-    * 一行為一筆資料，範例為 $m$ 筆 $n$ 維的資料，$d$ 為期望輸出
+    * 一行為一筆資料，範例為 $m$ 筆 $n$ 維的資料， $d$ 為期望輸出
+
 $$
   \begin{matrix}
    x_{11} & x_{12} & \cdots & x_{1n} & d_1 \\
